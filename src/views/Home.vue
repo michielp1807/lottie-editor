@@ -1,18 +1,32 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div id="home">
+    <h1>Welcome!</h1>
+    <p>*Short introduction of the site here!*</p>
+    <FileDrop />
+    <LoadedAnimPreview />
+    <h2>Example animations</h2>
+    <p>Here will be previews of the example animations that you can click to open!</p>
   </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import { defineComponent } from "vue";
+import FileDrop from "../components/FileDrop.vue";
+import LoadedAnimPreview from "../components/LoadedAnimPreview.vue";
 
-@Options({
+export default defineComponent({
   components: {
-    HelloWorld,
+    FileDrop,
+    LoadedAnimPreview,
   },
-})
-export default class Home extends Vue {}
+});
 </script>
+
+<style scoped>
+#home {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2em;
+}
+</style>
